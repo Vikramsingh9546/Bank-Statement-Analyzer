@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Financial Management System</h1>
+    <div class="budgets">
+        <h2>Budgets</h2>
+        <ul>
+            {% for category, amount in budgets.items() %}
+            <li>{{ category }}: ₹{{ amount }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="expenses">
+        <h2>Expenses</h2>
+        <ul>
+            {% for expense in expenses %}
+            <li>₹{{ expense }}</li>
+            {% endfor %}
+        </ul>
+        <form action="{{ url_for('add_expense') }}" method="post">
+            <label for="category">Category:</label>
+            <select>
+                <option>Food</option>
+                <option>Education</option>
+                <option>Other</option>
+              </select><br>
+            <input type="text" id="category" name="category"><br>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount"><br>
+            <input type="submit" value="Add Expense">
+        </form>
+    </div>
+    <div class="remaining-budget">
+        <h2>Remaining Budget</h2>
+        <p>₹{{ remaining_budget }}</p>
+    </div>
+</body>
+</html>

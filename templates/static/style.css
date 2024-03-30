@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #2e2e2e;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.budgets, .expenses, .remaining-budget {
+    margin: 20px auto;
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.budgets{
+    background-color: #e3ffa8;
+}
+.expenses{
+    background-color: #45ffbc;
+}
+.remaining-budget{
+    background-color: #969593;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+form {
+    margin-top: 10px;
+}
